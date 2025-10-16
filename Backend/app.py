@@ -29,8 +29,10 @@ bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
 
 # MongoDB connection
-mongo_client = MongoClient('mongodb://localhost:27017/')
-db = mongo_client['auth_system']
+mongodb_uri = os.getenv('MONGODB_URI', 'mongodb://localhost:27017/')
+print(f"MongoDB URI loaded: {'Yes' if mongodb_uri else 'No'}")
+mongo_client = MongoClient(mongodb_uri)
+db = mongo_client['auth_db']  # Using auth_db as specified in your Atlas URI
 users_collection = db['users']
 chats_collection = db['chats']
 
