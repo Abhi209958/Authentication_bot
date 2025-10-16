@@ -1,0 +1,35 @@
+/* Custom styles for the Chat application */
+.chat-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.message-input {
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+
+/* Custom scrollbar for chat messages */
+.messages-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
